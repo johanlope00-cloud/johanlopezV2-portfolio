@@ -255,7 +255,7 @@ section[id] {
 }
 
 .logo-link {
-  display: inline-flex;
+  display: inline-grid;
   align-items: center;
   border-radius: 10px;
   transition:
@@ -279,17 +279,21 @@ section[id] {
   padding: 0;
 }
 
+.logo-link .logo-img {
+  grid-area: 1 / 1;
+  transition: opacity 0.2s ease;
+}
 .logo-link .logo-dark {
-  display: none;
+  opacity: 0;
+  visibility: hidden;
 }
 [data-theme="dark"] .logo-link .logo-light {
-  display: none;
+  opacity: 0;
+  visibility: hidden;
 }
 [data-theme="dark"] .logo-link .logo-dark {
-  display: block;
-}
-[data-theme="dark"] .logo-link .logo-dark.img-fallback {
-  display: grid;
+  opacity: 1;
+  visibility: visible;
 }
 
 .nav-desktop {
